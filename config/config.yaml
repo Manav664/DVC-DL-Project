@@ -1,0 +1,17 @@
+artifacts:
+  untrained_model_dir_name: untrained_models
+  untrained_model_file_name: untrained_model.npy
+  trained_model_dir_name: trained_models
+  trained_model_file_name: trained_model.npy
+
+
+data:
+  data_dir: data
+  train_images_file_name: x_train.npy
+  train_labels_file_name: y_train.npy
+  test_images_file_name: x_test.npy
+  test_labels_file_name: y_test.npy
+
+logs:
+    log_dir_name: logs
+    log_file_name: running_logs.log
