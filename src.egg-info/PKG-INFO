@@ -6,9 +6,7 @@ Home-page: https://github.com/Manav664/DVC-DL-Project.git
 Author: Manav664
 Author-email: sunny.c17hawke@gmail.com
 License: GNU
+Description: # DVC-DL-Project
 Platform: UNKNOWN
 Requires-Python: >=3.6
 Description-Content-Type: text/markdown
-
-# DVC-DL-Project
-

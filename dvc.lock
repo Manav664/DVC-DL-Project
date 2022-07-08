@@ -1,0 +1,58 @@
+schema: '2.0'
+stages:
+  stage_01:
+    cmd: python src/stage_01_load_split_save_data.py
+    deps:
+    - path: config/config.yaml
+      md5: 6d12f6606c178b40bdf48c8e1ccc4fdf
+      size: 434
+    - path: src/stage_01_load_split_save_data.py
+      md5: c71917788ab945f050a68382ef43fc9c
+      size: 1896
+    - path: src/utils/all_utils.py
+      md5: 76f25a4309f29005a173190e9baed79e
+      size: 930
+    outs:
+    - path: data/x_test.npy
+      md5: 05852affbaf8e2140acaa95bfd8c602b
+      size: 30720128
+    - path: data/x_train.npy
+      md5: 794a4871ad6e5afe4edbe5c0c048b5a7
+      size: 153600128
+    - path: data/y_test.npy
+      md5: 4846404154c8dd074a57c66c850dcdd1
+      size: 10128
+    - path: data/y_train.npy
+      md5: f8ebf94fefabced378e2bab00dc77491
+      size: 50128
+    - path: logs/running_logs.log
+      md5: 5bb0cc5b984dd03efb59d2c4d2863721
+      size: 369
+  stage_01_load_split_save_data:
+    cmd: python src/stage_01_load_split_save_data.py
+    deps:
+    - path: config/config.yaml
+      md5: 6d12f6606c178b40bdf48c8e1ccc4fdf
+      size: 434
+    - path: src/stage_01_load_split_save_data.py
+      md5: c71917788ab945f050a68382ef43fc9c
+      size: 1896
+    - path: src/utils/all_utils.py
+      md5: 76f25a4309f29005a173190e9baed79e
+      size: 930
+    outs:
+    - path: data/x_test.npy
+      md5: 05852affbaf8e2140acaa95bfd8c602b
+      size: 30720128
+    - path: data/x_train.npy
+      md5: 794a4871ad6e5afe4edbe5c0c048b5a7
+      size: 153600128
+    - path: data/y_test.npy
+      md5: 4846404154c8dd074a57c66c850dcdd1
+      size: 10128
+    - path: data/y_train.npy
+      md5: f8ebf94fefabced378e2bab00dc77491
+      size: 50128
+    - path: logs/running_logs.log
+      md5: 5bb0cc5b984dd03efb59d2c4d2863721
+      size: 369

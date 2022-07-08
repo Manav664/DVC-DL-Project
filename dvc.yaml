@@ -1,0 +1,13 @@
+stages:
+  stage_01_load_split_save_data:
+    cmd: python src/stage_01_load_split_save_data.py
+    deps:
+      - config/config.yaml
+      - src/utils/all_utils.py
+      - src/stage_01_load_split_save_data.py
+    outs:
+      - data/x_test.npy
+      - data/x_train.npy
+      - data/y_test.npy
+      - data/y_train.npy
+      - logs/running_logs.log

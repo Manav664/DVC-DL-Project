@@ -1,7 +1,7 @@
-dvc
-pandas
-tensorflow
-matplotlib
-tqdm
 PyYAML
 boto3
+dvc
+matplotlib
+pandas
+tensorflow
+tqdm

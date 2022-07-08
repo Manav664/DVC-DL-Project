@@ -6,7 +6,7 @@ artifacts:
 
 
 data:
-  data_dir: data
+  data_dir_name: data
   train_images_file_name: x_train.npy
   train_labels_file_name: y_train.npy
   test_images_file_name: x_test.npy
