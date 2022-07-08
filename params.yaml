@@ -1,0 +1,11 @@
+base:
+  num_classes: 10
+  include_top: False
+  image_width: 32
+  image_height: 32
+  image_channels: 3
+  weights: None
+  optimizer: Adam
+  epochs: 1
+  batch_size: 64
+  learning_rate: 4e-4

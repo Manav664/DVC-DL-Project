@@ -8,7 +8,7 @@ def read_yaml(config_path: str) -> dict:
         content = yaml.safe_load(yaml_file)
     return content
 
-def initialize_log(config_path: str):
+def initialize_log(config_path: str, filemode="a"):
     logging_str = "[%(asctime)s: %(levelname)s: %(module)s]: %(message)s"
 
     content = read_yaml(config_path=config_path)
@@ -19,7 +19,7 @@ def initialize_log(config_path: str):
     create_directory([log_dir_path])
 
     logging.basicConfig(filename=log_file_path,
-                        filemode="w",
+                        filemode=filemode,
                         format=logging_str,
                         level=logging.INFO)
     

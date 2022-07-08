@@ -11,3 +11,14 @@ stages:
       - data/y_test.npy
       - data/y_train.npy
       - logs/running_logs.log
+  
+  stage_02_build_save_model:
+    cmd: src/stage_02_build_save_model.py
+    deps:
+      - src/stage_02_build_save_model.py
+      - config/config.yaml
+      - src/utils/all_utils.py
+      - src/utils/models.py
+      - params.yaml
+    outs:
+      - artifacts/untrained_models/untrained_model.h5

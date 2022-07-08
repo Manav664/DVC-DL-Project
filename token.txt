@@ -1,1 +1,1 @@
-git remote add origin https://Manav664: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@github.com/Manav664/DVC-DL-Project.git
+git remote add origin https://Manav664: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@github.com/Manav664/DVC-DL-Project.git

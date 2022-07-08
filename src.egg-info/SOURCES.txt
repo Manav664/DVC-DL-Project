@@ -2,6 +2,7 @@ README.md
 setup.py
 src/__init__.py
 src/stage_01_load_split_save_data.py
+src/stage_02_build_save_model.py
 src.egg-info/PKG-INFO
 src.egg-info/SOURCES.txt
 src.egg-info/dependency_links.txt
