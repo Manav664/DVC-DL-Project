@@ -8,4 +8,4 @@ base:
   optimizer: Adam
   epochs: 1
   batch_size: 64
-  learning_rate: 4e-4
+  loss_fnc: sparse_categorial_crossentropy
