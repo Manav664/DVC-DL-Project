@@ -22,3 +22,14 @@ stages:
       - params.yaml
     outs:
       - artifacts/untrained_models/untrained_model.h5
+
+  stage_03_create_save_callbacks:
+    cmd: python src/stage_03_create_save_callbacks.py 
+    deps:
+      - src/stage_03_create_save_callbacks.py 
+      - config/config.yaml
+      - src/utils/all_utils.py
+      - src/utils/callbacks.py
+    outs:
+      - artifacts/callbacks/checkpoint.cb
+      - artifacts/callbacks/tensorboard.cb

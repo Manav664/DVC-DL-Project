@@ -32,8 +32,8 @@ stages:
     cmd: python src/stage_01_load_split_save_data.py
     deps:
     - path: config/config.yaml
-      md5: ca97cea6c7db9e6369f55b05d4b76526
-      size: 480
+      md5: ab4426e874d3e93d597755d0294ecbdc
+      size: 589
     - path: src/stage_01_load_split_save_data.py
       md5: 0f43c33d6138d005692d55433f0b1bb0
       size: 1964
@@ -54,27 +54,49 @@ stages:
       md5: f8ebf94fefabced378e2bab00dc77491
       size: 50128
     - path: logs/running_logs.log
-      md5: a57e0d12ce4071bc6bc7147077c099b8
+      md5: 52de3e970314835cfb17ba903de63acd
       size: 375
   stage_02_build_save_model:
     cmd: python src/stage_02_build_save_model.py
     deps:
     - path: config/config.yaml
-      md5: ca97cea6c7db9e6369f55b05d4b76526
-      size: 480
+      md5: ab4426e874d3e93d597755d0294ecbdc
+      size: 589
     - path: params.yaml
-      md5: f40ca31be4333844f5ec9f3b8ccf60bf
-      size: 198
+      md5: 75a0ea7f9c443372e2849330d0272077
+      size: 223
     - path: src/stage_02_build_save_model.py
-      md5: 9f003daf83bcca5629f271a2d42b31b2
-      size: 909
+      md5: a4335fe06ad94b5567d88518f7adfa0f
+      size: 911
     - path: src/utils/all_utils.py
       md5: aebf6e926407884a1f5a04b4744df4b9
       size: 1223
     - path: src/utils/models.py
-      md5: f5d322c0740dc81194098544050f5075
-      size: 2098
+      md5: f8e2720e250dfb65be20ddf48bd401c7
+      size: 2356
     outs:
     - path: artifacts/untrained_models/untrained_model.h5
-      md5: ee127b59792c455cd0e9ad2f5a23b29d
-      size: 9387720
+      md5: 559d3fdbd830e834667a9d89f25ba2ad
+      size: 9387792
+  stage_03_create_save_callbacks:
+    cmd: python src/stage_03_create_save_callbacks.py
+    deps:
+    - path: config/config.yaml
+      md5: ab4426e874d3e93d597755d0294ecbdc
+      size: 589
+    - path: src/stage_03_create_save_callbacks.py
+      md5: e33eb6aa289f21e850d2c1b6408f9f2a
+      size: 1588
+    - path: src/utils/all_utils.py
+      md5: aebf6e926407884a1f5a04b4744df4b9
+      size: 1223
+    - path: src/utils/callbacks.py
+      md5: 99c2278aeb20574953797a000447d99d
+      size: 1321
+    outs:
+    - path: artifacts/callbacks/checkpoint.cb
+      md5: 0936178400236237dc39cf517ec21253
+      size: 750
+    - path: artifacts/callbacks/tensorboard.cb
+      md5: 8b4a9769adb63ccac43f95739d4a9713
+      size: 593

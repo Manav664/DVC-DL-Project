@@ -1,9 +1,14 @@
 artifacts:
   artifact_dir_name: artifacts
+
   untrained_model_dir_name: untrained_models
   untrained_model_file_name: untrained_model.h5
   trained_model_dir_name: trained_models
   trained_model_file_name: trained_model.h5
+
+  callback_dir_name: callbacks
+  tensorboard_dir_name: tensorboard
+  checkpoint_dir_name: checkpoints
 
 
 data:
