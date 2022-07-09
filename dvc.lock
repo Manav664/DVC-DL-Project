@@ -38,8 +38,8 @@ stages:
       md5: 0f43c33d6138d005692d55433f0b1bb0
       size: 1964
     - path: src/utils/all_utils.py
-      md5: 5be4b384498b0da7ce0f24e4aef08207
-      size: 980
+      md5: aebf6e926407884a1f5a04b4744df4b9
+      size: 1223
     outs:
     - path: data/x_test.npy
       md5: 05852affbaf8e2140acaa95bfd8c602b
@@ -54,7 +54,7 @@ stages:
       md5: f8ebf94fefabced378e2bab00dc77491
       size: 50128
     - path: logs/running_logs.log
-      md5: 6d022a3d8eab1d352e1df6912c8e3963
+      md5: a57e0d12ce4071bc6bc7147077c099b8
       size: 375
   stage_02_build_save_model:
     cmd: python src/stage_02_build_save_model.py
@@ -66,15 +66,15 @@ stages:
       md5: f40ca31be4333844f5ec9f3b8ccf60bf
       size: 198
     - path: src/stage_02_build_save_model.py
-      md5: c7efd1ee3ab723e3b0f7621035a0e840
-      size: 930
+      md5: 9f003daf83bcca5629f271a2d42b31b2
+      size: 909
     - path: src/utils/all_utils.py
-      md5: 5be4b384498b0da7ce0f24e4aef08207
-      size: 980
+      md5: aebf6e926407884a1f5a04b4744df4b9
+      size: 1223
     - path: src/utils/models.py
-      md5: f575228a891ef37f6e1ee79630d8885b
-      size: 1640
+      md5: f5d322c0740dc81194098544050f5075
+      size: 2098
     outs:
     - path: artifacts/untrained_models/untrained_model.h5
-      md5: ad1499ae10d2d1d719141ecce4f69934
-      size: 9502608
+      md5: ee127b59792c455cd0e9ad2f5a23b29d
+      size: 9387720
