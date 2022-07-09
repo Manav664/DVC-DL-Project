@@ -40,3 +40,11 @@ def create_save_model_ckp(checkpoint_dir: str,callback_dir: str):
     joblib.dump(checkpoint_cb,os.path.join(callback_dir,"checkpoint.cb"))
 
     logging.info("ModelCheckpoint callback created and saved")
+
+def prepare_callbacks(callback_dir):
+    
+    logging.info("Loading callbacks ..")
+    callbacks_path = [os.path.join(callback_dir,cur_cb) for cur_cb in os.listdir(callback_dir) if cur_cb.endswith(".cb")]
+    callbacks = [joblib.load(cur_cb) for cur_cb in callbacks_path]
+    logging.info("callbacks loaded")
+    return callbacks
