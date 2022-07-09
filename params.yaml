@@ -8,4 +8,8 @@ base:
   optimizer: Adam
   epochs: 1
   batch_size: 64
-  loss_fnc: sparse_categorial_crossentropy
+  loss_fnc: sparse_categorical_crossentropy
+
+train_model:
+  epochs: 1
+  batch_size: 8
