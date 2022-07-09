@@ -1,7 +1,9 @@
 
+from tensorboard import summary
 import yaml
 import os
 import logging
+import io
 
 def read_yaml(config_path: str) -> dict:
     with open(config_path) as yaml_file:
@@ -29,3 +31,9 @@ def create_directory(dir_paths: list):
     for dir_path in dir_paths:
         if not os.path.isdir(dir_path):
             os.mkdir(dir_path)
+
+def save_model_summary(model):
+    with io.StringIO() as stream:
+        model.summary(print_fn=lambda x: stream.write(f"{x}\n"))
+        summary_str= stream.getvalue()
+    return summary_str

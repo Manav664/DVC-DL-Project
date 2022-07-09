@@ -22,5 +22,9 @@ if __name__ == '__main__' :
     initialize_log(config_path=parsed_args.config,filemode="a")
 
     logging.info("\n <<<<<< stage 2 started ")
-    build_save_model(config_path=parsed_args.config,params_path=parsed_args.params)
-    logging.info("\n stage 2 completed >>>>>>")
+    try:
+        build_save_model(config_path=parsed_args.config,params_path=parsed_args.params)
+        logging.info("\n stage 2 completed >>>>>>")
+    except Exception as e:
+        logging.info(f"FAILED to build and save model")
+        logging.info(f"{e}")

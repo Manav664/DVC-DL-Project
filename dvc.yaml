@@ -13,7 +13,7 @@ stages:
       - logs/running_logs.log
   
   stage_02_build_save_model:
-    cmd: src/stage_02_build_save_model.py
+    cmd: python src/stage_02_build_save_model.py
     deps:
       - src/stage_02_build_save_model.py
       - config/config.yaml

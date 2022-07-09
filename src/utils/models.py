@@ -1,10 +1,15 @@
 import imp
+from multiprocessing.dummy import active_children
+from operator import mod
 import os 
 from xml.etree.ElementInclude import include
-from tensorflow.keras.layers import GlobalAveragePooling2D, Dense
-from src.utils.all_utils import read_yaml, create_directory
+from tensorflow.keras.layers import GlobalAveragePooling2D, Dense, Input
+from src.utils.all_utils import read_yaml, create_directory, save_model_summary
 from tensorflow.keras.applications import MobileNetV2
+from tensorflow.keras.models import Sequential
 import logging
+
+
 
 def build_save_model(config_path: str, params_path: str):
     content = read_yaml(config_path=config_path)
@@ -18,12 +23,21 @@ def build_save_model(config_path: str, params_path: str):
     if weights == "None":
         weights = None
 
-    model = MobileNetV2(include_top=include_top,
+    base_model = MobileNetV2(include_top=include_top,
                     weights=weights,
                     input_shape=(image_width,image_height,image_channels))
     
+    model = Sequential()
+
+    model.add(Input((32,32,3)))
+    model.add(base_model)
+    model.add(GlobalAveragePooling2D())
+    model.add(Dense(10,activation='softmax'))
+
     logging.info("Successfully loaded the model")
-    
+
+    model_summary_str = save_model_summary(model=model)
+    logging.info(f"Full model summary : \n {model_summary_str}")  
 
     artifact_dir_name = content["artifacts"]["artifact_dir_name"]
     artifact_dir_path = os.path.join(os.getcwd(),artifact_dir_name)
