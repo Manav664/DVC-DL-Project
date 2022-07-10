@@ -10,7 +10,6 @@ stages:
       - data/x_train.npy
       - data/y_test.npy
       - data/y_train.npy
-      - logs/running_logs.log
   
   stage_02_build_save_model:
     cmd: python src/stage_02_build_save_model.py
@@ -33,3 +32,21 @@ stages:
     outs:
       - artifacts/callbacks/checkpoint.cb
       - artifacts/callbacks/tensorboard.cb
+  
+  stage_04_train:
+    cmd: python src/stage_04_train.py
+    deps:
+      - src/stage_04_train.py
+      - config/config.yaml
+      - params.yaml
+      - src/utils/all_utils.py
+      - src/utils/callbacks.py
+      - data/x_test.npy
+      - data/x_train.npy
+      - data/y_test.npy
+      - data/y_train.npy
+      - artifacts/untrained_models/untrained_model.h5
+      - artifacts/callbacks/checkpoint.cb
+      - artifacts/callbacks/tensorboard.cb
+    outs:
+      - artifacts/trained_models/trained_model.h5

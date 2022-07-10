@@ -63,8 +63,8 @@ stages:
       md5: ab4426e874d3e93d597755d0294ecbdc
       size: 589
     - path: params.yaml
-      md5: 75a0ea7f9c443372e2849330d0272077
-      size: 223
+      md5: ad53047b0003e8c6dd9e11b9e2d2f6f8
+      size: 293
     - path: src/stage_02_build_save_model.py
       md5: a4335fe06ad94b5567d88518f7adfa0f
       size: 911
@@ -72,11 +72,11 @@ stages:
       md5: aebf6e926407884a1f5a04b4744df4b9
       size: 1223
     - path: src/utils/models.py
-      md5: f8e2720e250dfb65be20ddf48bd401c7
-      size: 2356
+      md5: 0cb001172b05944968ef1b4f83e94fae
+      size: 2358
     outs:
     - path: artifacts/untrained_models/untrained_model.h5
-      md5: 559d3fdbd830e834667a9d89f25ba2ad
+      md5: 423e82072731293dffc7d20b07b59b43
       size: 9387792
   stage_03_create_save_callbacks:
     cmd: python src/stage_03_create_save_callbacks.py
@@ -91,12 +91,55 @@ stages:
       md5: aebf6e926407884a1f5a04b4744df4b9
       size: 1223
     - path: src/utils/callbacks.py
-      md5: 99c2278aeb20574953797a000447d99d
-      size: 1321
+      md5: 16ad2b7bbfb5927a10b8bad16c47dc28
+      size: 1658
     outs:
     - path: artifacts/callbacks/checkpoint.cb
       md5: 0936178400236237dc39cf517ec21253
       size: 750
     - path: artifacts/callbacks/tensorboard.cb
-      md5: 8b4a9769adb63ccac43f95739d4a9713
-      size: 593
+      md5: d51fc139ce3365ade59eb61b0c42b4a4
+      size: 594
+  stage_04_train:
+    cmd: python src/stage_04_train.py
+    deps:
+    - path: artifacts/callbacks/checkpoint.cb
+      md5: 0936178400236237dc39cf517ec21253
+      size: 750
+    - path: artifacts/callbacks/tensorboard.cb
+      md5: d51fc139ce3365ade59eb61b0c42b4a4
+      size: 594
+    - path: artifacts/untrained_models/untrained_model.h5
+      md5: 423e82072731293dffc7d20b07b59b43
+      size: 9387792
+    - path: config/config.yaml
+      md5: ab4426e874d3e93d597755d0294ecbdc
+      size: 589
+    - path: data/x_test.npy
+      md5: 05852affbaf8e2140acaa95bfd8c602b
+      size: 30720128
+    - path: data/x_train.npy
+      md5: 794a4871ad6e5afe4edbe5c0c048b5a7
+      size: 153600128
+    - path: data/y_test.npy
+      md5: 4846404154c8dd074a57c66c850dcdd1
+      size: 10128
+    - path: data/y_train.npy
+      md5: f8ebf94fefabced378e2bab00dc77491
+      size: 50128
+    - path: params.yaml
+      md5: ad53047b0003e8c6dd9e11b9e2d2f6f8
+      size: 293
+    - path: src/stage_04_train.py
+      md5: 953cf923a18232988a9d6a65d2c2554e
+      size: 4071
+    - path: src/utils/all_utils.py
+      md5: aebf6e926407884a1f5a04b4744df4b9
+      size: 1223
+    - path: src/utils/callbacks.py
+      md5: 16ad2b7bbfb5927a10b8bad16c47dc28
+      size: 1658
+    outs:
+    - path: artifacts/trained_models/trained_model.h5
+      md5: ef7d8e272a379e2af77c3a22170cfb9c
+      size: 27675136

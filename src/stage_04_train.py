@@ -52,13 +52,16 @@ def train_model(config_path:str, params_path:str):
     #getting training parameters
     epochs = params["train_model"]["epochs"]
     batch_size = params["train_model"]["batch_size"]
+    steps_per_epoch = params["train_model"]["steps_per_epoch"]
 
     #training the model
     logging.info("Model training started")
     model.fit(x_train,y_train,
               epochs=epochs,
               batch_size=batch_size,
-              validation_data= (x_test,y_test))
+              steps_per_epoch=steps_per_epoch,
+              callbacks= callbacks,
+              validation_data= (x_test[:10],y_test[:10]))
     
     logging.info("Model training completed")
 
