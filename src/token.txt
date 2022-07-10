@@ -1,1 +1,0 @@
-git remote add origin https://Manav664:public_access_token@github.com/user_name/repo_name.git

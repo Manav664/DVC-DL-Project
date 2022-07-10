@@ -46,7 +46,7 @@ if __name__ == "__main__":
 
     parsed_args = args.parse_args()
 
-    initialize_log(config_path=parsed_args.config,filemode="w")
+    initialize_log(config_path=parsed_args.config,filemode="a")
     logging.info("\n <<<<<< stage 1 started")
     load_split_save(config_path=parsed_args.config)
     logging.info("\n stage 1 completed >>>>>>")

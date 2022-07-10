@@ -1,83 +1,5 @@
 schema: '2.0'
 stages:
-  stage_01:
-    cmd: python src/stage_01_load_split_save_data.py
-    deps:
-    - path: config/config.yaml
-      md5: 6d12f6606c178b40bdf48c8e1ccc4fdf
-      size: 434
-    - path: src/stage_01_load_split_save_data.py
-      md5: c71917788ab945f050a68382ef43fc9c
-      size: 1896
-    - path: src/utils/all_utils.py
-      md5: 76f25a4309f29005a173190e9baed79e
-      size: 930
-    outs:
-    - path: data/x_test.npy
-      md5: 05852affbaf8e2140acaa95bfd8c602b
-      size: 30720128
-    - path: data/x_train.npy
-      md5: 794a4871ad6e5afe4edbe5c0c048b5a7
-      size: 153600128
-    - path: data/y_test.npy
-      md5: 4846404154c8dd074a57c66c850dcdd1
-      size: 10128
-    - path: data/y_train.npy
-      md5: f8ebf94fefabced378e2bab00dc77491
-      size: 50128
-    - path: logs/running_logs.log
-      md5: 5bb0cc5b984dd03efb59d2c4d2863721
-      size: 369
-  stage_01_load_split_save_data:
-    cmd: python src/stage_01_load_split_save_data.py
-    deps:
-    - path: config/config.yaml
-      md5: ab4426e874d3e93d597755d0294ecbdc
-      size: 589
-    - path: src/stage_01_load_split_save_data.py
-      md5: 0f43c33d6138d005692d55433f0b1bb0
-      size: 1964
-    - path: src/utils/all_utils.py
-      md5: aebf6e926407884a1f5a04b4744df4b9
-      size: 1223
-    outs:
-    - path: data/x_test.npy
-      md5: 05852affbaf8e2140acaa95bfd8c602b
-      size: 30720128
-    - path: data/x_train.npy
-      md5: 794a4871ad6e5afe4edbe5c0c048b5a7
-      size: 153600128
-    - path: data/y_test.npy
-      md5: 4846404154c8dd074a57c66c850dcdd1
-      size: 10128
-    - path: data/y_train.npy
-      md5: f8ebf94fefabced378e2bab00dc77491
-      size: 50128
-    - path: logs/running_logs.log
-      md5: 52de3e970314835cfb17ba903de63acd
-      size: 375
-  stage_02_build_save_model:
-    cmd: python src/stage_02_build_save_model.py
-    deps:
-    - path: config/config.yaml
-      md5: ab4426e874d3e93d597755d0294ecbdc
-      size: 589
-    - path: params.yaml
-      md5: ad53047b0003e8c6dd9e11b9e2d2f6f8
-      size: 293
-    - path: src/stage_02_build_save_model.py
-      md5: a4335fe06ad94b5567d88518f7adfa0f
-      size: 911
-    - path: src/utils/all_utils.py
-      md5: aebf6e926407884a1f5a04b4744df4b9
-      size: 1223
-    - path: src/utils/models.py
-      md5: 0cb001172b05944968ef1b4f83e94fae
-      size: 2358
-    outs:
-    - path: artifacts/untrained_models/untrained_model.h5
-      md5: 423e82072731293dffc7d20b07b59b43
-      size: 9387792
   stage_03_create_save_callbacks:
     cmd: python src/stage_03_create_save_callbacks.py
     deps:
@@ -98,8 +20,55 @@ stages:
       md5: 0936178400236237dc39cf517ec21253
       size: 750
     - path: artifacts/callbacks/tensorboard.cb
-      md5: d51fc139ce3365ade59eb61b0c42b4a4
+      md5: c056a29e9222106f16ff8747ce2bd665
       size: 594
+  stage_01_load_split_save_data:
+    cmd: python src/stage_01_load_split_save_data.py
+    deps:
+    - path: config/config.yaml
+      md5: ab4426e874d3e93d597755d0294ecbdc
+      size: 589
+    - path: src/stage_01_load_split_save_data.py
+      md5: ceb7874e881fa110d21facf649b8f005
+      size: 1964
+    - path: src/utils/all_utils.py
+      md5: aebf6e926407884a1f5a04b4744df4b9
+      size: 1223
+    outs:
+    - path: data/x_test.npy
+      md5: 05852affbaf8e2140acaa95bfd8c602b
+      size: 30720128
+    - path: data/x_train.npy
+      md5: 794a4871ad6e5afe4edbe5c0c048b5a7
+      size: 153600128
+    - path: data/y_test.npy
+      md5: 4846404154c8dd074a57c66c850dcdd1
+      size: 10128
+    - path: data/y_train.npy
+      md5: f8ebf94fefabced378e2bab00dc77491
+      size: 50128
+  stage_02_build_save_model:
+    cmd: python src/stage_02_build_save_model.py
+    deps:
+    - path: config/config.yaml
+      md5: ab4426e874d3e93d597755d0294ecbdc
+      size: 589
+    - path: params.yaml
+      md5: ad53047b0003e8c6dd9e11b9e2d2f6f8
+      size: 293
+    - path: src/stage_02_build_save_model.py
+      md5: a4335fe06ad94b5567d88518f7adfa0f
+      size: 911
+    - path: src/utils/all_utils.py
+      md5: aebf6e926407884a1f5a04b4744df4b9
+      size: 1223
+    - path: src/utils/models.py
+      md5: 0cb001172b05944968ef1b4f83e94fae
+      size: 2358
+    outs:
+    - path: artifacts/untrained_models/untrained_model.h5
+      md5: d4d64b791692ec6e435c8e6b28303be1
+      size: 9387792
   stage_04_train:
     cmd: python src/stage_04_train.py
     deps:
@@ -107,10 +76,10 @@ stages:
       md5: 0936178400236237dc39cf517ec21253
       size: 750
     - path: artifacts/callbacks/tensorboard.cb
-      md5: d51fc139ce3365ade59eb61b0c42b4a4
+      md5: c056a29e9222106f16ff8747ce2bd665
       size: 594
     - path: artifacts/untrained_models/untrained_model.h5
-      md5: 423e82072731293dffc7d20b07b59b43
+      md5: d4d64b791692ec6e435c8e6b28303be1
       size: 9387792
     - path: config/config.yaml
       md5: ab4426e874d3e93d597755d0294ecbdc
@@ -141,5 +110,5 @@ stages:
       size: 1658
     outs:
     - path: artifacts/trained_models/trained_model.h5
-      md5: ef7d8e272a379e2af77c3a22170cfb9c
+      md5: dbc83cb3cfcb0eeafca819fbafccde13
       size: 27675136
