@@ -1,0 +1,54 @@
+[2022-07-10 09:27:33,007: INFO: stage_02_build_save_model]: 
+ <<<<<< stage 2 started 
+[2022-07-10 09:27:33,015: WARNING: mobilenet_v2]: `input_shape` is undefined or non-square, or `rows` is not in [96, 128, 160, 192, 224]. Weights for input shape (224, 224) will be loaded as the default.
+[2022-07-10 09:27:34,752: INFO: models]: Successfully loaded the model
+[2022-07-10 09:27:34,752: INFO: models]: Full model summary : 
+ Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ mobilenetv2_1.00_224 (Funct  (None, 1, 1, 1280)       2257984   
+ ional)                                                          
+                                                                 
+ global_average_pooling2d (G  (None, 1280)             0         
+ lobalAveragePooling2D)                                          
+                                                                 
+ dense (Dense)               (None, 10)                12810     
+                                                                 
+=================================================================
+Total params: 2,270,794
+Trainable params: 2,236,682
+Non-trainable params: 34,112
+_________________________________________________________________
+
+[2022-07-10 09:27:34,979: INFO: models]: Successfully saved the model at C:\Users\hp\OneDrive\Desktop\DVC\artifacts\untrained_models\untrained_model.h5
+[2022-07-10 09:27:34,979: INFO: stage_02_build_save_model]: 
+ stage 2 completed >>>>>>
+[2022-07-10 09:27:41,783: INFO: stage_01_load_split_save_data]: 
+ <<<<<< stage 1 started
+[2022-07-10 09:27:42,411: INFO: stage_01_load_split_save_data]: Data loaded and splitted successfully
+[2022-07-10 09:27:50,154: INFO: stage_01_load_split_save_data]: Data saved sucessfully
+[2022-07-10 09:27:50,292: INFO: stage_01_load_split_save_data]: 
+ stage 1 completed >>>>>>
+[2022-07-10 09:27:58,007: INFO: stage_03_create_save_callbacks]: 
+ <<<<<< stage 3 started 
+[2022-07-10 09:27:58,013: INFO: callbacks]: creating tensorboard callback ...
+[2022-07-10 09:27:58,015: INFO: callbacks]: Tensorboard callback created and saved
+[2022-07-10 09:27:58,015: INFO: callbacks]: creating ModelCheckpoint callback ...
+[2022-07-10 09:27:58,017: INFO: callbacks]: ModelCheckpoint callback created and saved
+[2022-07-10 09:27:58,017: INFO: stage_03_create_save_callbacks]: 
+ stage 3 completed >>>>>>
+[2022-07-10 09:28:04,283: INFO: stage_04_train]: 
+ <<<<<< stage 4 started 
+[2022-07-10 09:28:04,287: INFO: stage_04_train]: Fetching data
+[2022-07-10 09:28:04,479: INFO: stage_04_train]: Data Fetched Sucessfully
+[2022-07-10 09:28:04,479: INFO: callbacks]: Loading callbacks ..
+[2022-07-10 09:28:04,479: INFO: callbacks]: callbacks loaded
+[2022-07-10 09:28:04,479: INFO: stage_04_train]: Loading the model
+[2022-07-10 09:28:06,652: INFO: stage_04_train]: Model loaded
+[2022-07-10 09:28:06,652: INFO: stage_04_train]: Model training started
+[2022-07-10 09:28:17,341: INFO: stage_04_train]: Model training completed
+[2022-07-10 09:28:17,341: INFO: stage_04_train]: Saving the trained model
+[2022-07-10 09:28:18,012: INFO: stage_04_train]: Model saved successfully
+[2022-07-10 09:28:18,012: INFO: stage_04_train]: 
+ stage 4 completed >>>>>>
